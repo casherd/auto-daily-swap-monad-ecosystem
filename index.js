@@ -159,7 +159,7 @@ async function withRetry(fn, maxRetries = 10, delayMs = 10000) {
     try {
       return await fn();
     } catch (err) {
-      const msg = err?.message || "";
+      const msg = err?message || "";
       if (
         err?.code === -32007 ||
         msg.includes("request limit") ||
